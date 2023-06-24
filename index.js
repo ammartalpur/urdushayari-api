@@ -4,8 +4,8 @@ const ejs = require('ejs');
 const mongoose = require('mongoose');
 
 const app = express();
-const port = process.env.PORT || 3000;
-const hostname = "127.0.0.1"
+const port = process.env.PORT;
+
 const db = mongoose.connection;
 // ro23q2PRPKikKDZZ shayari 
 app.set('view engine', 'ejs');
@@ -53,7 +53,7 @@ app.post('/shayari', (req, res) => {
 })
 db.on('open', () => {
     console.log("Successfully connected to database!");
-    app.listen(port, hostname, () => {
+    app.listen(port, () => {
         console.log(`Server is running on http://${hostname}:${port}`)
     })
 })
