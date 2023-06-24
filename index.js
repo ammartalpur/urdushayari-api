@@ -7,7 +7,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const hostname = "127.0.0.1"
 const db = mongoose.connection;
-
+// ro23q2PRPKikKDZZ shayari 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"))
@@ -15,7 +15,7 @@ app.use(express.static("public"))
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"))
-mongoose.connect('mongodb://localhost:27017/urdushayari');
+mongoose.connect('mongodb+srv://ammar:onpwM19CrZFF5kXA@ammar.z1dmemi.mongodb.net/shayariDB');
 db.on('error', console.error.bind(console, "Failed to Connect to Database"));
 
 const shayariSchema = mongoose.Schema({
@@ -29,7 +29,7 @@ app.get('/shayari', (req, res) => {
     // Get the count of all users
     Shayari.countDocuments().exec().then(function (count) {
 
-        // Get a random entry
+        // Get a random entrys
         var random = Math.floor(Math.random() * count)
         // console.log(random);
         // Again query all users but only fetch one offset by our random #
