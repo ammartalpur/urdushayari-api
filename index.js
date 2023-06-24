@@ -54,6 +54,6 @@ app.post('/shayari', (req, res) => {
 db.on('open', () => {
     console.log("Successfully connected to database!");
     app.listen(port, () => {
-        console.log(`Server is running on http://${hostname}:${port}`)
+        console.log(`Server is running on ${port}`)
     })
 })
