@@ -8,14 +8,14 @@ const port = process.env.PORT;
 
 const db = mongoose.connection;
 // ro23q2PRPKikKDZZ shayari 
-app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"))
+// app.set('view engine', 'ejs');
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(express.static("public"))
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"))
-mongoose.connect('mongodb+srv://ammar:onpwM19CrZFF5kXA@ammar.z1dmemi.mongodb.net/shayariDB');
+mongoose.connect('mongodb+srv://ammar:vJEAsya7hII0lEL0@ammar.z1dmemi.mongodb.net/shayariDB?retryWrites=true&w=majority');
 db.on('error', console.error.bind(console, "Failed to Connect to Database"));
 
 const shayariSchema = mongoose.Schema({
