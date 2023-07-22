@@ -15,7 +15,7 @@ const db = mongoose.connection;
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"))
-mongoose.connect('mongodb+srv://ammar:vJEAsya7hII0lEL0@ammar.z1dmemi.mongodb.net/shayariDB?retryWrites=true&w=majority');
+mongoose.connect(process.env.DB);
 db.on('error', console.error.bind(console, "Failed to Connect to Database"));
 
 const shayariSchema = mongoose.Schema({
